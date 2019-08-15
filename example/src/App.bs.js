@@ -3,9 +3,20 @@
 
 var React = require("react");
 var ReactButton = require("@material/react-button");
+var ReactMaterialIcon = require("@material/react-material-icon");
 
 function App(Props) {
-  return React.createElement("div", undefined, React.createElement(ReactButton.default, {
+  return React.createElement("div", undefined, React.createElement(ReactMaterialIcon.default, {
+                  icon: "alarm",
+                  hasRipple: true
+                }), React.createElement(ReactMaterialIcon.default, {
+                  icon: "clock",
+                  hasRipple: false
+                }), React.createElement(ReactMaterialIcon.default, {
+                  className: "color-teal",
+                  icon: "clock",
+                  hasRipple: false
+                }), React.createElement(ReactButton.default, {
                   raised: true,
                   children: "meow"
                 }));

@@ -2,10 +2,13 @@
 'use strict';
 
 
-var Icon = /* module */[];
+var MaterialIcon = /* module */[];
 
 var Button = /* module */[];
 
-exports.Icon = Icon;
+var AppBar = /* module */[];
+
+exports.MaterialIcon = MaterialIcon;
 exports.Button = Button;
+exports.AppBar = AppBar;
 /* No side effect */
