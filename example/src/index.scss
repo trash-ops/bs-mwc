@@ -1,13 +1,23 @@
 @import "~@material/react-button/index";
 @import '~@material/react-top-app-bar/index';
 @import '~@material/react-material-icon/index';
+@import '~@material/react-drawer/index.scss';
+
 body {
   margin: 0;
   padding: 0;
-
 }
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
 :root {
   --mdc-theme-primary: brown
+}
+
+.unselectable {
+  user-select: none;
 }
 
 

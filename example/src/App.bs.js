@@ -2,24 +2,45 @@
 'use strict';
 
 var React = require("react");
-var ReactButton = require("@material/react-button");
+var ReactTopAppBar = require("@material/react-top-app-bar");
 var ReactMaterialIcon = require("@material/react-material-icon");
 
 function App(Props) {
-  return React.createElement("div", undefined, React.createElement(ReactMaterialIcon.default, {
-                  icon: "alarm",
-                  hasRipple: true
-                }), React.createElement(ReactMaterialIcon.default, {
-                  icon: "clock",
-                  hasRipple: false
-                }), React.createElement(ReactMaterialIcon.default, {
-                  className: "color-teal",
-                  icon: "clock",
-                  hasRipple: false
-                }), React.createElement(ReactButton.default, {
-                  raised: true,
-                  children: "meow"
-                }));
+  React.useReducer((function (state, action) {
+          if (action) {
+            return /* record */[/* drawerOpen */false];
+          } else {
+            return /* record */[/* drawerOpen */true];
+          }
+        }), /* record */[/* drawerOpen */true]);
+  React.createElement("i", {
+        className: "material-icons"
+      }, "alarm");
+  return React.createElement("div", {
+              className: "container"
+            }, React.createElement(ReactTopAppBar.default, {
+                  fixed: true,
+                  children: React.createElement(ReactTopAppBar.TopAppBarRow, {
+                        children: React.createElement(ReactTopAppBar.TopAppBarSection, {
+                              align: "start",
+                              children: null
+                            }, React.createElement(ReactTopAppBar.TopAppBarIcon, {
+                                  navIcon: true,
+                                  children: React.createElement("div", {
+                                        onClick: (function (_e) {
+                                            console.log("pressed!");
+                                            return /* () */0;
+                                          })
+                                      }, React.createElement(ReactMaterialIcon.default, {
+                                            className: "unselectable",
+                                            icon: "menu",
+                                            hasRipple: true
+                                          }))
+                                }), React.createElement(ReactTopAppBar.TopAppBarTitle, {
+                                  children: "title"
+                                }))
+                      })
+                }), null);
 }
 
 var make = App;

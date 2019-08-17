@@ -6,9 +6,28 @@ var MaterialIcon = /* module */[];
 
 var Button = /* module */[];
 
-var AppBar = /* module */[];
+var Row = /* module */[];
+
+var Title = /* module */[];
+
+var Section = /* module */[];
+
+var Icon = /* module */[];
+
+var FixedAdjust = /* module */[];
+
+var AppBar = /* module */[
+  /* Row */Row,
+  /* Title */Title,
+  /* Section */Section,
+  /* Icon */Icon,
+  /* FixedAdjust */FixedAdjust
+];
+
+var Drawer = /* module */[];
 
 exports.MaterialIcon = MaterialIcon;
 exports.Button = Button;
 exports.AppBar = AppBar;
+exports.Drawer = Drawer;
 /* No side effect */
