@@ -89,21 +89,45 @@ module AppBar = {
         ~children: React.element=?
       ) =>
       React.element =
-      "TopAppBarIcon";
+      "TopAppBarFixedAdjust";
   };
 };
 
 module Drawer = {
-  [@bs.module "@material/react-top-app-bar"] [@react.component]
+  [@bs.module "@material/react-drawer"] [@react.component]
   external make:
     (
       ~className: string=?,
-      ~onOpeen: bool=?,
-      ~onClose: Function=?,
-      ~modal: bool=?,
-      ~dismissable: bool=?,
+      ~dense: bool=?,
+      ~prominent: bool=?,
+      ~short: bool=?,
+      ~tag: string=?,
       ~children: React.element=?
     ) =>
     React.element =
-    "TopAppBarIcon";
+    "default";
+
+  module AppContent = {
+    [@bs.module "@material/react-drawer"] [@react.component]
+    external make:
+      (~className: string=?, ~children: React.element=?) => React.element =
+      "DrawerAppContent";
+  };
+  module Header = {
+    [@bs.module "@material/react-drawer"] [@react.component]
+    external make:
+      (~className: string=?, 
+      ~children: React.element=?) 
+      => React.element =
+      "DrawerHeader";
+  };
+  module Title = {
+    [@bs.module "@material/react-drawer"] [@react.component]
+    external make:
+      (~className: string=?, 
+      ~tag: string=?,
+      ~children: React.element=?) 
+      => React.element =
+      "DrawerTitle";
+  };
 };

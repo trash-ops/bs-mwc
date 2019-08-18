@@ -24,7 +24,17 @@ var AppBar = /* module */[
   /* FixedAdjust */FixedAdjust
 ];
 
-var Drawer = /* module */[];
+var AppContent = /* module */[];
+
+var Header = /* module */[];
+
+var Title$1 = /* module */[];
+
+var Drawer = /* module */[
+  /* AppContent */AppContent,
+  /* Header */Header,
+  /* Title */Title$1
+];
 
 exports.MaterialIcon = MaterialIcon;
 exports.Button = Button;

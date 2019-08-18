@@ -2,11 +2,13 @@
 'use strict';
 
 var React = require("react");
+var ReactDrawer = require("@material/react-drawer");
+var Body$ReactHooksTemplate = require("./Body.bs.js");
 var ReactTopAppBar = require("@material/react-top-app-bar");
 var ReactMaterialIcon = require("@material/react-material-icon");
 
 function App(Props) {
-  React.useReducer((function (state, action) {
+  var match = React.useReducer((function (state, action) {
           if (action) {
             return /* record */[/* drawerOpen */false];
           } else {
@@ -16,31 +18,42 @@ function App(Props) {
   React.createElement("i", {
         className: "material-icons"
       }, "alarm");
+  var match$1 = match[0][/* drawerOpen */0];
   return React.createElement("div", {
-              className: "container"
-            }, React.createElement(ReactTopAppBar.default, {
-                  fixed: true,
-                  children: React.createElement(ReactTopAppBar.TopAppBarRow, {
-                        children: React.createElement(ReactTopAppBar.TopAppBarSection, {
-                              align: "start",
-                              children: null
-                            }, React.createElement(ReactTopAppBar.TopAppBarIcon, {
-                                  navIcon: true,
-                                  children: React.createElement("div", {
-                                        onClick: (function (_e) {
-                                            console.log("pressed!");
-                                            return /* () */0;
-                                          })
-                                      }, React.createElement(ReactMaterialIcon.default, {
-                                            className: "unselectable",
-                                            icon: "menu",
-                                            hasRipple: true
-                                          }))
-                                }), React.createElement(ReactTopAppBar.TopAppBarTitle, {
-                                  children: "title"
-                                }))
-                      })
-                }), null);
+              className: "drawer-container"
+            }, match$1 ? React.createElement(ReactDrawer.default, {
+                    children: React.createElement(ReactDrawer.DrawerHeader, {
+                          children: React.createElement(ReactDrawer.DrawerTitle, {
+                                children: "title"
+                              })
+                        })
+                  }) : null, React.createElement("div", {
+                  className: "drawer-app-content"
+                }, React.createElement(ReactTopAppBar.default, {
+                      fixed: true,
+                      children: React.createElement(ReactTopAppBar.TopAppBarRow, {
+                            children: React.createElement(ReactTopAppBar.TopAppBarSection, {
+                                  align: "start",
+                                  children: null
+                                }, React.createElement(ReactTopAppBar.TopAppBarIcon, {
+                                      navIcon: true,
+                                      children: React.createElement("div", {
+                                            onClick: (function (_e) {
+                                                console.log("pressed!");
+                                                return /* () */0;
+                                              })
+                                          }, React.createElement(ReactMaterialIcon.default, {
+                                                className: "unselectable",
+                                                icon: "menu",
+                                                hasRipple: true
+                                              }))
+                                    }), React.createElement(ReactTopAppBar.TopAppBarTitle, {
+                                      children: "title"
+                                    }))
+                          })
+                    }), React.createElement(ReactTopAppBar.TopAppBarFixedAdjust, {
+                      children: React.createElement(Body$ReactHooksTemplate.make, { })
+                    })));
 }
 
 var make = App;
